@@ -2,7 +2,9 @@
 
 A logger that prints all messages with a readable output format.
 
-[![Crates.io][crates-badge]][crates-url]
+[![Latest version][crates-badge]][crates-url]
+[![All downloads](https://img.shields.io/crates/d/lite-log.svg)](https://crates.io/crates/lite-log)
+[![Downloads of latest version](https://img.shields.io/crates/dv/lite-log.svg)](https://crates.io/crates/lite-log)
 [![MIT License][license-badge]][license-link]
 [![Github Tags][tags-badge]][tags-link]
 [![Github Issues][issues-badge]][issues-link]

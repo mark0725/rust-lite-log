@@ -3,7 +3,7 @@
 //! Optional features include timestamps, colored output and logging to stderr.
 //!
 //! ```rust
-//! logger::LiteLogger::new().env().init().unwrap();
+//! lite_log::LiteLogger::new().env().init().unwrap();
 //!
 //! log::warn!("This is an example message.");
 //! ```
@@ -13,19 +13,19 @@
 //! Just initialize logging without any configuration:
 //!
 //! ```rust
-//! logger::init().unwrap();
+//! lite_log::init().unwrap();
 //! ```
 //!
 //! Set the log level from the `RUST_LOG` environment variable:
 //!
 //! ```rust
-//! logger::init_with_env().unwrap();
+//! lite_log::init_with_env().unwrap();
 //! ```
 //!
 //! Hardcode a default log level:
 //!
 //! ```rust
-//! logger::init_with_level(log::Level::Warn).unwrap();
+//! lite_log::init_with_level(log::Level::Warn).unwrap();
 //! ```
 
 #![cfg_attr(feature = "nightly", feature(thread_id_value))]
@@ -94,7 +94,7 @@ impl Logger {
     /// default log level set to `Level::Trace`.
     ///
     /// ```no_run
-    /// use logger::Logger;
+    /// use lite_log::LiteLogger as Logger;
     /// Logger::new().env().init().unwrap();
     /// log::warn!("This is an example message.");
     /// ```
@@ -128,7 +128,7 @@ impl Logger {
     /// the logger, and you must call [`init`] in order to start logging messages.
     ///
     /// ```no_run
-    /// use logger::Logger;
+    /// use lite_log::LiteLogger as Logger;
     /// Logger::from_env().init().unwrap();
     /// log::warn!("This is an example message.");
     /// ```
@@ -190,7 +190,7 @@ impl Logger {
     /// Silence an overly verbose crate:
     ///
     /// ```no_run
-    /// use logger::Logger;
+    /// use lite_log::Logger;
     /// use log::LevelFilter;
     ///
     /// Logger::new().with_module_level("chatty_dependency", LevelFilter::Warn).init().unwrap();
@@ -199,7 +199,7 @@ impl Logger {
     /// Disable logging for all dependencies:
     ///
     /// ```no_run
-    /// use logger::Logger;
+    /// use lite_log::Logger;
     /// use log::LevelFilter;
     ///
     /// Logger::new()
@@ -256,10 +256,10 @@ impl Logger {
     /// [`chrono` crate book](https://docs.rs/chrono/latest/chrono/format/index.html).
     ///
     /// ```
-    /// logger::Logger::new()
+    /// lite_log::LiteLogger::new()
     ///  .with_level(log::LevelFilter::Debug)
     ///  .env()
-    ///  .with_timestamp_format("%Y-%m-%d %H:%M:%S")
+    ///  .with_timestamp_format(&String::from("%Y-%m-%d %H:%M:%S"))
     ///  .init()
     ///  .unwrap();
     /// ```
