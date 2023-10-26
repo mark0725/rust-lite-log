@@ -5,7 +5,7 @@ edition = "2021"
 license = "MIT"
 authors = ["Mark <mark_0725@outlook.com>"]
 description = "A logger that prints all messages with a readable output format"
-repository = "https://github.com/mark0725/lite-log"
+repository = "https://github.com/mark0725/rust-lite-log"
 
 [features]
 default = ["colors", "timestamps"]
@@ -18,6 +18,4 @@ stderr = []
 [dependencies]
 chrono = { version = "0.4.31", optional = true }
 colored = { version = "2.0.4", optional = true }
-futures = "0.3.28"
-futures-util = "0.3.28"
-log = "0.4.20"
+log = { version = "0.4.20", features = ["std"]}
