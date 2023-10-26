@@ -12,13 +12,19 @@ The output format is based on the format used by [Supervisord](https://github.co
 ## Usage
 
 ```rust
-use lite_log::Logger;
+use lite_log::LiteLogger;
 
 fn main() {
-    Logger::new().init().unwrap();
+    LiteLogger::new().init().unwrap();
 
     log::warn!("This is an example message.");
 }
+```
+
+### run example
+
+```
+cargo run --example init
 ```
 
 ## License

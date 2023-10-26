@@ -3,7 +3,7 @@
 //! Optional features include timestamps, colored output and logging to stderr.
 //!
 //! ```rust
-//! logger::Logger::new().env().init().unwrap();
+//! logger::LiteLogger::new().env().init().unwrap();
 //!
 //! log::warn!("This is an example message.");
 //! ```
